@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des utilisateur</title>
+    <style>
+    /* Importation de la police Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox input,
+.inputBox textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.inputBox textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.inputBox button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.inputBox button:hover {
+    background-color: #3e8e41;
+}
+
+.alert {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: none;
+}
+
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style pour le bouton principal */
+button.primary {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+button.primary:hover {
+  background-color: #45a049;
+}
+
+/* Style pour le bouton secondaire */
+button.secondary {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+button.secondary:hover {
+  background-color: #0d8bf2;
+}
+
+/* Style pour le bouton de danger */
+button.danger {
+  background-color: #f44336;
+  color: #fff;
+}
+
+button.danger:hover {
+  background-color: #e53935;
+}
+
+/* Style pour les boutons désactivés */
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Style pour les boutons avec une icône */
+button i {
+  margin-right: 8px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table id="messagesList"></table>
+    </div>
+
+    <div class="container">
+        <form action="" id="contactForm">
+            <div class="alert">Envoyer votre message</div>
+            <div class="inputBox">
+                <input type="text" id="name" placeholder="Your name...." />
+                <input type="email" id="emailid" placeholder="Your Email....." />
+                <textarea id="msgContent" cols="30" rows="10" placeholder="Message"></textarea>
+                <input id="date" type="date" ></input>
+                <button type="submit" id="submit-button">Envoyer</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="mail.js"></script>
+</body>
+</html>
